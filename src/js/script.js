@@ -4,22 +4,17 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import { BASE_URL, options } from './pixabay-api.js';
 
-///////////////////////////////////////////////////////////////
-
-// DOM LINKS
 const galleryEl = document.querySelector('.gallery');
 const searchInputEl = document.querySelector('input[name="searchQuery"');
 const searchFormEl = document.getElementById('search-form');
 
-///////////////////////////////////////////////////////////////
 
-// instantiate simplelightbox
 const lightbox = new SimpleLightbox('.lightbox', {
   captionsData: 'alt',
   captionDelay: 250,
 });
 
-///////////////////////////////////////////////////////////////
+
 let totalHits = 0;
 let reachedEnd = false;
 
@@ -66,7 +61,6 @@ function renderGallery(hits) {
 
   galleryEl.insertAdjacentHTML('beforeend', markup);
 
-  //   If the user has reached the end of the collection
   if (options.params.page * options.params.per_page >= totalHits) {
     if (!reachedEnd) {
       Notify.info("We're sorry, but you've reached the end of search results.");
@@ -75,8 +69,6 @@ function renderGallery(hits) {
   }
   lightbox.refresh();
 }
-
-///////////////////////////////////////////////////////////////
 
 async function handleSubmit(e) {
   e.preventDefault();
@@ -108,8 +100,6 @@ async function handleSubmit(e) {
     Notify.failure(err);
   }
 }
-
-///////////////////////////////////////////////////////////////
 
 async function loadMore() {
   options.params.page += 1;

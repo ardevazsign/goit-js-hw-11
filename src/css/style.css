@@ -1,12 +1,4 @@
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-}
+
 body{
   font-family: 'Roboto', sans-serif;
   margin: 0;
@@ -56,6 +48,8 @@ button:hover{
 /* main content */
 
 img {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   display: block;
   width: 270px;
   height: 150px;
@@ -96,6 +90,7 @@ img {
 }
 
 .photo-card {
+  border-radius: 5px;
   margin-top: 30px;
   margin-left: 30px;
   box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.2),
